@@ -1,5 +1,5 @@
 import { Space, Card, Typography, Input, Button, Checkbox } from "antd"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik"
 import * as Yup from 'yup'
 
@@ -15,6 +15,7 @@ type FormProps = {
 export const Signup: React.FC = () => {
 
     const { Title, Paragraph, Text } = Typography
+    const navigate = useNavigate()
     const formik = useFormik<FormProps>({
         initialValues:{
             username:'',
@@ -33,7 +34,8 @@ export const Signup: React.FC = () => {
             confirm:Yup.boolean().required('You must agree to our terms and conditions')
         }),
         onSubmit:(values) => {
-            console.log(values)
+            localStorage.setItem("userDetails", JSON.stringify(values))
+            navigate('/login')
         }
     })
 

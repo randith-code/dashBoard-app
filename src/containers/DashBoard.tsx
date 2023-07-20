@@ -31,6 +31,7 @@ export const DashBoard:React.FC = () => {
 
       const logout = () => {
         localStorage.removeItem('user')
+        localStorage.removeItem('userDetails')
         navigate('/login')
       }
 
@@ -62,7 +63,7 @@ export const DashBoard:React.FC = () => {
                     display:'flex',
                     justifyContent:'space-between',
                     alignItems:'center',
-                    top:'0'
+                    top:'0',
                 }}
             >
                 <Text style={{color:'#1677FF'}} strong > Finance </Text>

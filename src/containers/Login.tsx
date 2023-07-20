@@ -28,14 +28,27 @@ export const Login: React.FC = () =>{
             }
         ),
         onSubmit:(values) => {
-            if (
-                values.email === "sample@gmail.com" &&
-                values.password === "p@ssw0rd"
-              ) {
-                localStorage.setItem("user", JSON.stringify(values));
-                navigate("/");
-              } else {
-                setAlert("Wrong credentials...!");
+            const user:{ [key: string]: string } = JSON.parse(localStorage.getItem("userDetails") || '{}')
+            
+
+            const email =  user['email'] 
+            const password = user['password']
+
+            
+            if (email == undefined && password == undefined){
+                setAlert('You have to signup first')
+            } 
+            else {
+
+                if(values.email === email && values.password === password){
+                    localStorage.setItem("user", JSON.stringify(values));
+                    navigate("/"); 
+                }
+                else{
+                    setAlert("Wrong credentials...!");
+  
+                }
+               
               }
         }
     })
