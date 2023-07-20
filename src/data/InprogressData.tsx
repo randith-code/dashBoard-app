@@ -1,0 +1,55 @@
+import { OrderProp } from "../components/Order";
+
+export const inProgressOrdersArray:OrderProp[] = [
+    {
+      orderId: '123456',
+      item: 'Laptop',
+      model: 'AetherBook Pro X3',
+      status: 'In Progress',
+      customer: 'John Doe',
+      address: '123 Main Street',
+      country: 'United States',
+      processlevel: 2,
+    },
+    {
+      orderId: '789012',
+      item: 'Tablet',
+      model: 'AetherPad Lite',
+      status: 'In Progress',
+      customer: 'Jane Smith',
+      address: '456 Oak Avenue',
+      country: 'Canada',
+      processlevel: 1,
+    },
+    {
+      orderId: '345678',
+      item: 'Smartphone',
+      model: 'AetherPhone Max',
+      status: 'Completed',
+      customer: 'Mike Johnson',
+      address: '789 Elm Road',
+      country: 'Australia',
+      processlevel: 3,
+    },
+    {
+      orderId: '901234',
+      item: 'Desktop PC',
+      model: 'AetherTower Ultra',
+      status: 'In Progress',
+      customer: 'Sarah Lee',
+      address: '321 Pine Lane',
+      country: 'United Kingdom',
+      processlevel: 2,
+    },
+    {
+      orderId: '567890',
+      item: 'Monitor',
+      model: 'AetherScreen Pro',
+      status: 'In Progress',
+      customer: 'Robert Brown',
+      address: '654 Maple Street',
+      country: 'Germany',
+      processlevel: 1,
+    },
+  ];
+  
